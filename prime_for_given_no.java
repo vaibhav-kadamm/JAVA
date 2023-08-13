@@ -1,0 +1,31 @@
+
+class prime_for_given_no {
+	static void prime_N(int n){
+	
+		int x, y, flg;
+		System.out.println("All the Prime numbers within 1 and " + n + " are:");
+
+		for (x = 1; x <= n; x++) {
+			if (x == 1 || x == 0)
+				continue;
+
+			flg = 1;
+
+			for (y = 2; y <= x / 2; ++y) {
+				if (x % y == 0) {
+					flg = 0;
+					break;
+				}
+			}
+			if (flg == 1)
+				System.out.print(x + " ");
+		}
+	}
+
+	public static void main(String[] args)
+	{
+		int n= 45;
+
+		prime_N(n);
+	}
+}
